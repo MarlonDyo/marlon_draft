@@ -202,7 +202,7 @@ $$\boxed{t_0=0.9761}$$
 
 ___
 
-Podemos refazer as análises para $r^*<r<1$ 
+Podemos refazer as análises para $ r^* < r < 1 $ 
 
 e o ângulo entre L e D $\alpha$, com $\alpha \le \pi$:
 
