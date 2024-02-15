@@ -1,0 +1,258 @@
+Para simplificar vou chamar Luke de L e Darth de D
+
+Variaveis
+- $v$: velocidade de L
+- $v_r$: velocidade radial de L
+- $v_t$: velocidade tangencial de L
+- $w$: velocidade angular de L
+- $r$: posição radial de L
+- $w_d$: velocidade angular de D
+- $k$: velocidade de D
+- $R$: raio da estrela da morte = 1
+- $\theta$: ângulo de decomposição da velocidade e L entre componente tangencial e radial.
+- $\alpha$: ângulo entre D e L
+- $\tau$: Tempo mínimo para L escapar
+
+Sabe-se que a velocidade angular de D é:
+
+$$ w_d = \frac{k}{R} = k$$
+
+Além disso:
+
+$$ w = \frac{v_t}{r} $$
+
+Para certos valores de raio $r$, é possível $w \ge w_d$, ou seja L tem uma velocidade angular maior que a de D. Esse raio ocorre quando:
+
+$$w=\frac{v_t}{r} \ge k$$
+
+$$  \therefore\; r \le \frac{1}{k} $$
+
+O caso limite é:
+
+$$ \boxed{r^* = \frac{1}{k}} $$
+
+Na corrida de L vs D, L quer percorrer radialmente a distância de 1 e D quer percorrer a distancia ângular $\pi$ radianos entre L e D.
+
+Como até chegar nesse raio $r^*$ L pode ter uma velocidade angular $w > w_d$, L pode alcançar $r^*$ sem que D tenha progresso em sua missão. L pode alcançar r^* dedicando parte de sua velocidade para compensar os progressos de D (velocidade tangencial $v_t$) e ainda sobrar uma componente radial para sua velocidade.
+
+Assim, L pode chegar a $r^*$ mantendo a distância angular entre L e D constante em $\pi$.
+
+A decomposição da velocidade de L pode ser feita utilizando o ângulo $\theta$.
+
+$$ \boxed{v_r = cos(\theta)}$$
+$$ \boxed{v_t = sen(\theta)}$$
+
+Sabemos que a distância total que L deve percorrer depois de alcançar $r^*$ mantendo a distância angular entre D e L em $\pi$ é:
+
+$$ \int_{0}^{t_0}v_r dt = 1 - r^* $$
+$$ \int_{0}^{t_0} \frac{ v_r}{1 - r^*} dt = 1 $$
+$$ \boxed{\int_{0}^{t_0} \frac{cos(\theta)k}{ k - 1 } dt = 1} $$
+
+Vamos definir o progresso de L ($p_L$) em sua missão como:
+$$p_L = \frac{cos(\theta)k}{ k - 1 }$$
+
+Sabemos que a distância total que D deve percorrer é:
+
+$$\int_{0}^{t_0} ( w_d - w ) dt = \pi$$
+$$\int_{0}^{t_0} \frac{1}{\pi} \left( k - \frac{v_t}{r} \right) dt = 1$$
+$$\int_{0}^{t_0} \frac{1}{\pi} \left( k - \frac{sen(\theta)}{r} \right) dt = 1$$
+$$\boxed{\int_{0}^{t_0} \frac{ rk - sen(\theta) }{r\pi} dt = 1}$$
+
+Vamos definir o progresso de D ($p_D$) em sua missão como:
+
+$$ p_D = \frac{ rk - sen(\theta) }{r\pi} $$
+
+Agora, podemos definir um coeficiente de progresso relativo ($y$) entre L e D, tal que quanto maior $y$, melhor para L
+
+$$ y = \frac{p_L}{p_D}$$
+$$ \boxed{y= \frac{cos(\theta)k}{ k - 1 }.\frac{r\pi}{ rk - sen(\theta) }}  $$
+
+Assim, podemos achar $\theta$ tal que $y$ é máximo:
+
+$$\frac{dy}{d\theta} = 0$$
+
+$$\frac{d}{d\theta}\left(\frac{cos(\theta)k}{ k - 1 }.\frac{r\pi}{ rk - sen(\theta) }\right) = 0$$
+
+$$\frac{d}{d\theta}\left(\frac{cos(\theta)}{ rk - sen(\theta) }\right) = 0$$
+
+$$\frac{d}{d\theta}cos(\theta)\left(\frac{1}{ rk - sen(\theta) }\right) + cos(\theta)\frac{d}{d\theta}\left(\frac{1}{ rk - sen(\theta) }\right) = 0$$
+
+$$\left(\frac{-sen(\theta)}{ rk - sen(\theta) }\right) + \frac{cos^2(\theta)}{(rk - sen(\theta))^{2}} = 0$$
+
+$$ \frac{-sen(\theta)(rk - sen(\theta)) + cos^2(\theta)}{(rk - sen(\theta))^2} = 0$$
+
+$$ \frac{-sen(\theta)rk + sen^2(\theta) + cos^2(\theta)}{(rk - sen(\theta))^2} = 0$$
+
+$$ \frac{-sen(\theta)rk + 1}{(rk - sen(\theta))^2} = 0$$
+
+Note que no caso que $r \ge r^*$:
+
+$$r^* < r \le 1$$
+$$\frac{1}{k} < r \le 1$$
+
+
+Para $\frac{1}{k} < r \le 1$ e fazendo com que $\theta \neq \frac{\pi}{2}$:
+$$kr - sen(\theta)  > 1 - sen(\theta) > 0$$
+Assim:
+$$-sen(\theta)rk + 1 = 0$$
+
+$$sen(\theta)  =  \frac{1}{rk}$$
+
+Com:
+$$\frac{1}{k} < r \le 1$$
+
+$$1 \le \frac{1}{r} < k$$
+$$\frac{1}{k} \le \frac{1}{rk} < 1$$
+
+$$\frac{1}{k} \le sen(\theta) < 1$$
+
+Portanto, quando $r^* < r \le 1$, o $\theta$ que otimiza o progresso de L é:
+$$\boxed{\theta = arcsen  \frac{1}{rk}} $$
+Com isso:
+$$ v_r = \dot{r} = cos(\theta) = cos\left(arcsen\frac{1}{rk}\right)= \sqrt{1 - \frac{1}{r^2k^2}}$$
+$$ \frac{\dot{r}}{\sqrt{1 - \frac{1}{r^2k^2}}} = 1$$
+$$ \int\frac{dr/dt}{\sqrt{1 - \frac{1}{r^2k^2}}}dt = \int 1dt$$
+$$ \int\frac{1}{\sqrt{1 - \frac{1}{r^2k^2}}}dr = t + K$$
+$$ \int\left( 1 - \frac{1}{r^2k^2}\right)^{0.5}dr = t + K'$$
+$$ r\left( 1 - \frac{1}{r^2k^2}\right)^{0.5} = t + K$$
+$$ \left( 1 - \frac{1}{r^2k^2}\right)^{0.5} = \frac{t + K}{r}$$
+$$ \left( 1 - \frac{1}{r^2k^2}\right) = \frac{(t + K)^2}{r^2}$$
+
+$$ \left( r^2 - \frac{1}{k^2}\right) = (t + K)^2$$
+$$ r^2 = (t + K)^2 + \frac{1}{k^2}$$
+
+$$ r = \sqrt{t^2 + 2tK + K^2 + \frac{1}{k^2}}$$
+Como:
+$$r(0) = \frac{1}{k} = \sqrt{ K^2 + \frac{1}{k^2}} $$
+$$K = 0$$
+
+$$r(t_0) = 1 = \sqrt{t_0^2 + 2t_0K + K^2 + \frac{1}{k^2}}$$
+$$1 = t_0^2 + \frac{1}{k^2}$$
+$$\boxed{t_0 = \sqrt{1-\frac{1}{k^2}}}$$
+Assim:
+$$ \boxed{r = \sqrt{t^2 + \frac{1}{k^2}}}$$
+
+
+$$ v_t = sen\left(arcsen\frac{1}{rk}\right)  $$
+$$ \boxed{v_t = \frac{1}{rk}} $$
+
+Utilizando essa trajetória otimizada:
+
+$$\int_{0}^{t_0} \frac{1}{\pi}\left( k - \frac{v_t}{r} \right)  dt  = 1$$
+
+$$\int_{0}^{t_0} \frac{1}{\pi}\left( k - \frac{1}{r^2k} \right)  dt  = 1$$
+
+$$\int_{0}^{t_0} \frac{k}{\pi}\left( 1 - \frac{1}{r^2k^2} \right)  dt  = 1$$
+
+$$\int_{0}^{t_0}\left( 1 - \frac{1}{r^2k^2} \right)  dt  = \frac{\pi}{k}$$
+
+$$\int_{0}^{t_0}\left( 1 - \frac{1}{(t^2 + \frac{1}{k^2})k^2} \right)  dt  = \frac{\pi}{k}$$
+
+$$\int_{0}^{t_0}\left( 1 - \frac{1}{t^2k^2 + 1} \right)  dt  = \frac{\pi}{k}$$
+$$\int_{0}^{t_0}\frac{1}{t^2k^2 + 1} dt  = t_0-\frac{\pi}{k}$$
+
+$$ \frac{1}{k}\left(arctan(kt_0)-arctan(0)\right) = t_0-\frac{\pi}{k}$$
+$$ arctan(k t_0)-arctan(0) = k\sqrt{1-\frac{1}{k^2}}-\pi$$
+$$ arctan(k t_0) = k\sqrt{1-\frac{1}{k^2}}-\pi$$
+$$ k t_0 = tan\left(k\sqrt{1-\frac{1}{k^2}}-\pi\right)$$
+$$ k \sqrt{1-\frac{1}{k^2}} = tan\left(k\sqrt{1-\frac{1}{k^2}}\right)$$
+
+$$ \sqrt{k^2-1} = tan\left(\sqrt{k^2-1}\right)$$
+
+$$\sqrt{k^2-1}=4.4934$$
+$$\boxed{k_{lim}=4.6033}$$
+$$\boxed{t_0=0.9761}$$
+___
+
+Podemos refazer as análises para $r^*<r<1$ e o ângulo entre L e D é $\alpha$, com $\alpha \le \pi$:
+
+$$\boxed{\theta = arcsen  \frac{1}{rk}} $$
+$$\boxed{t_0 = \sqrt{1-\frac{1}{k^2}}}$$
+$$\boxed{ r = \sqrt{t^2 + \frac{1}{k^2}}}$$
+$$\boxed{ k \sqrt{1-\frac{1}{k^2}} = tan\left(k\sqrt{1-\frac{1}{k^2}}+\alpha\right)}$$
+___
+Temos que calcular agora a trajetória ótima de L indo do centro até $r^*$, que tem como duração $\tau$ e que encerra com ângulo entre L e D em $\alpha$
+
+Para $ 0 \le r < r^*$:
+$$\boxed{\int_{0}^{\tau}\left(k-\frac{sen(\theta)}{r}\right)dt = \pi-\alpha}$$
+$$\boxed{\int_{0}^{\tau}cos(\theta)dt = \frac{1}{k}}$$
+
+___
+E se a pegarmos uma solução particular da forma?
+$$\frac{sen(\theta)}{r} = k-\beta$$
+Assim:
+$$\beta\tau = \pi-\alpha$$
+$$\boxed{\beta = \frac{\pi-\alpha}{\tau}}$$
+
+$$sen(\theta) = r (k-\beta)$$
+$$sen(\theta) = r (k-\frac{\pi-\alpha}{\tau})$$
+$$\boxed{sen(\theta) = r\gamma}$$
+Com:
+$$\boxed{\gamma = k-\frac{\pi-\alpha}{\tau}}$$
+$$\dot{r}=cos(\theta)$$
+$$\frac{\dot{r}}{cos(\theta)}=1$$
+$$\int\frac{\dot{r}}{cos(\theta)}dt=t+K_2'$$
+$$\int\frac{1}{\sqrt{1-r^2\gamma^2}}dr=t+K_2'$$
+$$arcsen(r\gamma)=t+K_2$$
+Para $t=0$, $r=0$:
+$$arcsen(0)=\gamma K_2 $$
+$$K_2 = 0$$
+
+Para $t=\tau$, $r=1/k$:
+$$\tau =arcsen\left(\frac{\gamma}{k}\right)$$
+
+$$k-\frac{\pi-\alpha}{\tau} = ksen(\tau)$$
+$$\tau k-\pi+\alpha = \tau ksen(\tau)$$
+$$\tau k - \tau ksen(\tau) = \pi-\alpha$$
+$$\boxed{\tau  (1 - sen(\tau)) = \frac{\pi-\alpha}{k}}$$
+
+
+
+O tempo total $T$ nessa condição é:
+
+$$\boxed{T=t_0+\tau}$$
+Além disso:
+$$ k \sqrt{1-\frac{1}{k^2}} = tan\left(k\sqrt{1-\frac{1}{k^2}}+\alpha\right)$$
+Caso $k=0.99*k_{lim}$, e $0<\alpha<\pi$
+$$\alpha=k\sqrt{1-\frac{1}{k^2}}-arctan\left(k\sqrt{1-\frac{1}{k^2}}\right)$$
+$$\boxed{\alpha = 3.0966 = 177.424^o}$$
+$$\tau  (1 - sen(\tau)) = \frac{\pi-\alpha}{k}$$
+$$\boxed{\tau=1.4542}$$
+$$\beta = \frac{\pi-\alpha}{\tau}$$
+$$\boxed{\beta = 0.0309 \approx 1.77^o/u.d.t.}$$
+obs: $u.d.t$ = unidade de tempo
+$$\gamma = k-\frac{\pi-\alpha}{\tau}$$
+$$\boxed{\gamma=4.5263}$$
+Logo, o tempo total neste caso é:
+$$\boxed{T=2.4303}$$
+
+Caso $k=k_{lim}$
+$$\alpha = 3.1415 = 180^o$$
+$$\beta = 0$$
+
+$$\tau=1.574$$
+$$T=2.5501$$
+
+Assim, caso a solução particular adotada descreva a função ótima (que possivelmente não é verdade), a melhor estratégia caso $k=0.99* k_{lim}$ é que o trajeto até $r=1/k$ de L siga com velocidade angular relativa entre L e D de $-1.77^o/u.d.t$ e o restante da velocidade seja dedicada radialmente, posteriormente, quando $r\ge1/k$, a velocidade tangencial de L seja $v_t = \frac{1}{rk}$.
+____
+Agora preciso avaliar se a solução particular adota é a melhor função. Para isso, sugiro supor uma solução polinomial (que é um caso genérico da solução anterior) da forma:
+
+$$\frac{sen(\theta)}{r} = \sum_{i=0}^n\beta_i t^i$$
+Essa forma permitira que o espaço solução buscado seja mais abrangente e possibilitaria funções que possam ser descritas como uma expansão de Taylor com respeito a $t$. Assim:
+$$\int_{0}^{\tau}\left(k-\frac{sen(\theta)}{r}\right)dt = \pi-\alpha$$
+
+$$\int_{0}^{\tau}\sum_{i=0}^n\beta_i t^idt = k\tau-\pi+\alpha$$
+
+$$\sum_{i=0}^n\int_{0}^{\tau}\beta_i t^idt = k\tau-\pi+\alpha$$
+
+$$\boxed{\sum_{i=0}^n\frac{\beta_i \tau^{i+1}}{i+1} = k\tau-\pi+\alpha}$$
+$$\alpha(t) = -\int_{0}^{t}\left(k-\frac{sen(\theta)}{r}\right)dt+\pi $$
+$$\alpha(t) = -kt+\sum_{i=0}^n\frac{\beta_i t^{i+1}}{i+1}+\pi$$
+Obs: $\alpha(t\rarr 0) = \pi$
+$$\dot{r}=cos(\theta)=\sqrt{1-\left(\sum_{i=1}^n\beta_i t^i\right)^2}$$
+$$\boxed{\int\frac{dr}{\sqrt{1-\left(\sum_{i=1}^n\beta_i t^i\right)^2}}=t+K}$$
+
+$$\boxed{r(t=0) = 0}$$
+$$\boxed{r(t=\tau) = 1/k}$$
+
+$$\boxed{r(t) = \int_{0}^{t}\sqrt{1-\left(\sum_{i=1}^n\beta_i t^i\right)^2}dt}$$
