@@ -337,7 +337,7 @@ $$\alpha(t) = -\int_{0}^{t}\left(k-\frac{sen(\theta)}{r}\right)dt+\pi $$
 
 $$\alpha(t) = -kt+\sum_{i=0}^n\frac{\beta_i t^{i+1}}{i+1}+\pi$$
 
-Obs: $\alpha(t\rarr 0) = \pi$
+Obs: $\alpha (t \rarr 0) = \pi$
 
 $$\dot{r}=cos(\theta)=\sqrt{1-\left(\sum_{i=1}^n\beta_i t^i\right)^2}$$
 
