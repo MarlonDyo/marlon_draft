@@ -202,9 +202,7 @@ $$\boxed{t_0=0.9761}$$
 
 ___
 
-Podemos refazer as análises para $ r^* < r < 1 $ 
-
-e o ângulo entre L e D $\alpha$, com $\alpha \le \pi$:
+Podemos refazer as análises para $r^* < r < 1 $ e o ângulo entre L e D $\alpha$, com $\alpha \le \pi$:
 
 $$\boxed{\theta = arcsen  \frac{1}{rk}} $$
 
@@ -217,7 +215,7 @@ ___
 
 Temos que calcular agora a trajetória ótima de L indo do centro até $r^*$, que tem como duração $\tau$ e que encerra com ângulo entre L e D em $\alpha$
 
-Para $ 0 \le r < r^*$:
+Para $0 \le r < r^*$:
 
 $$\boxed{\int_{0}^{\tau}\left(k-\frac{sen(\theta)}{r}\right)dt = \pi-\alpha}$$
 
