@@ -33,7 +33,7 @@ $$ \boxed{r^* = \frac{1}{k}} $$
 
 Na corrida de L vs D, L quer percorrer radialmente a distância de 1 e D quer percorrer a distancia ângular $\pi$ radianos entre L e D.
 
-Como até chegar nesse raio $r^*$ L pode ter uma velocidade angular $w > w_d$, L pode alcançar $r^*$ sem que D tenha progresso em sua missão. L pode alcançar r^* dedicando parte de sua velocidade para compensar os progressos de D (velocidade tangencial $v_t$) e ainda sobrar uma componente radial para sua velocidade.
+Como até chegar nesse raio $r^*$ L pode ter uma velocidade angular $w > w_d$, L pode alcançar $r^*$ sem que D tenha progresso em sua missão. L pode alcançar $r^*$ dedicando parte de sua velocidade para compensar os progressos de D (velocidade tangencial $v_t$) e ainda sobrar uma componente radial para sua velocidade.
 
 Assim, L pode chegar a $r^*$ mantendo a distância angular entre L e D constante em $\pi$.
 
@@ -129,9 +129,9 @@ $$ \frac{\dot{r}}{\sqrt{1 - \frac{1}{r^2k^2}}} = 1$$
 
 $$ \int\frac{dr/dt}{\sqrt{1 - \frac{1}{r^2k^2}}}dt = \int 1dt$$
 
-$$ \int\frac{1}{\sqrt{1 - \frac{1}{r^2k^2}}}dr = t + K$$
+$$ \int\frac{1}{\sqrt{1 - \frac{1}{r^2k^2}}}dr = t + K'$$
 
-$$ \int\left( 1 - \frac{1}{r^2k^2}\right)^{0.5}dr = t + K'$$
+$$ \int\left( 1 - \frac{1}{r^2k^2}\right)^{-0.5}dr = t + K'$$
 
 $$ r\left( 1 - \frac{1}{r^2k^2}\right)^{0.5} = t + K$$
 
@@ -210,12 +210,12 @@ $$\boxed{t_0 = \sqrt{1-\frac{1}{k^2}}}$$
 
 $$\boxed{ r = \sqrt{t^2 + \frac{1}{k^2}}}$$
 
-$$\boxed{ k \sqrt{1-\frac{1}{k^2}} = tan\left(k\sqrt{1-\frac{1}{k^2}}+\alpha\right)}$$
+$$\boxed{ \sqrt{k^2-1} = tan\left(\sqrt{k^2-1}+\alpha\right)}$$
 ___
 
 Temos que calcular agora a trajetória ótima de L indo do centro até $r^*$, que tem como duração $\tau$ e que encerra com ângulo entre L e D em $\alpha$
 
-Para $0 \le r < r^*$:
+Para $0 < r < r^*$:
 
 $$\boxed{\int_{0}^{\tau}\left(k-\frac{sen(\theta)}{r}\right)dt = \pi-\alpha}$$
 
@@ -255,7 +255,7 @@ $$arcsen(r\gamma)=t+K_2$$
 
 Para $t=0$, $r=0$:
 
-$$arcsen(0)=\gamma K_2 $$
+$$arcsen(0)= K_2 $$
 
 $$K_2 = 0$$
 
@@ -279,11 +279,10 @@ $$\boxed{T=t_0+\tau}$$
 
 Além disso:
 
-$$ k \sqrt{1-\frac{1}{k^2}} = tan\left(k\sqrt{1-\frac{1}{k^2}}+\alpha\right)$$
-
+$$\sqrt{k^2-1} = tan\left(\sqrt{k^2-1}+\alpha\right)$$
 Caso $k=0.99*k_{lim}$, e $0<\alpha<\pi$
 
-$$\alpha=k\sqrt{1-\frac{1}{k^2}}-arctan\left(k\sqrt{1-\frac{1}{k^2}}\right)$$
+$$\alpha=\sqrt{k^2-1}-arctan\left(\sqrt{k^2-1}\right)$$
 
 $$\boxed{\alpha = 3.0966 = 177.424^o}$$
 
@@ -318,33 +317,18 @@ $$T=2.5501$$
 Assim, caso a solução particular adotada descreva a função ótima (que possivelmente não é verdade), a melhor estratégia caso $k=0.99* k_{lim}$ é que o trajeto até $r=1/k$ de L siga com velocidade angular relativa entre L e D de $-1.77^o/u.d.t$ e o restante da velocidade seja dedicada radialmente, posteriormente, quando $r\ge1/k$, a velocidade tangencial de L seja $v_t = \frac{1}{rk}$.
 
 ____
+Intuitivamente parece que é "barato" para L manter a distância angular até D. Então talvez uma forma particular que poderia se favorecer por isso seria:
 
-Agora preciso avaliar se a solução particular adota é a melhor função. Para isso, sugiro supor uma solução polinomial (que é um caso genérico da solução anterior) da forma:
+$$\frac{sen(\theta)}{r} = k-\beta e^{Ct}$$
 
-$$\frac{sen(\theta)}{r} = \sum_{i=0}^n\beta_i t^i$$
-
-Essa forma permitira que o espaço solução buscado seja mais abrangente e possibilitaria funções que possam ser descritas como uma expansão de Taylor com respeito a $t$. Assim:
-
+Assim:
 $$\int_{0}^{\tau}\left(k-\frac{sen(\theta)}{r}\right)dt = \pi-\alpha$$
+$$\int_{0}^{\tau}\beta e^{Ct}dt = \pi-\alpha$$
 
-$$\int_{0}^{\tau}\sum_{i=0}^n\beta_i t^idt = k\tau-\pi+\alpha$$
+$$\boxed{\frac{\beta}{C}\left(e^{C\tau}-1\right) = \pi-\alpha}$$
 
-$$\sum_{i=0}^n\int_{0}^{\tau}\beta_i t^idt = k\tau-\pi+\alpha$$
+$$sen(\theta) = r(k-\beta e^{Ct})$$
 
-$$\boxed{\sum_{i=0}^n\frac{\beta_i \tau^{i+1}}{i+1} = k\tau-\pi+\alpha}$$
-
-$$\alpha(t) = -\int_{0}^{t}\left(k-\frac{sen(\theta)}{r}\right)dt+\pi $$
-
-$$\alpha(t) = -kt+\sum_{i=0}^n\frac{\beta_i t^{i+1}}{i+1}+\pi$$
-
-Obs: $\alpha (t \rightarrow 0) = \pi$
-
-$$\dot{r}=cos(\theta)=\sqrt{1-\left(\sum_{i=1}^n\beta_i t^i\right)^2}$$
-
-$$\boxed{\int\frac{dr}{\sqrt{1-\left(\sum_{i=1}^n\beta_i t^i\right)^2}}=t+K}$$
-
-$$\boxed{r(t=0) = 0}$$
-
-$$\boxed{r(t=\tau) = 1/k}$$
-
-$$\boxed{r(t) = \int_{0}^{t}\sqrt{1-\left(\sum_{i=1}^n\beta_i t^i\right)^2}dt}$$
+$$\dot{r}=cos(\theta)$$
+$$\dot{r}=\sqrt{1-r^2(k-\beta e^{Ct})^2}$$
+$$\dot{r}^2=1-r^2(k-\beta e^{Ct})^2$$
