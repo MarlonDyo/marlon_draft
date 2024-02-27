@@ -282,9 +282,9 @@ Além disso:
 $$\sqrt{k^2-1} = tan\left(\sqrt{k^2-1}+\alpha\right)$$
 Caso $k=0.99*k_{lim}$, e $0<\alpha<\pi$
 
-$$\alpha=\sqrt{k^2-1}-arctan\left(\sqrt{k^2-1}\right)$$
+$$\alpha=arctan\left(\sqrt{k^2-1}\right)-\sqrt{k^2-1}$$
 
-$$\boxed{\alpha = 3.0966 = 177.424^o}$$
+$$\boxed{\alpha = 3.0317 = 173.704^o}$$
 
 $$\tau  (1 - sen(\tau)) = \frac{\pi-\alpha}{k}$$
 
