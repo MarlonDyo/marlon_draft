@@ -343,4 +343,22 @@ Já no caso $k=k_{lim}*0.99$:
 Os gráficos de trajetória tornam evidente a ineficiência da estratégia, especialmente na transição em torno de $r=1/k$.
 Acredito que uma função contínua em que $\theta$ tende para a funcão descrita no caso $k=k_{lim}$ deve ser a curva de menor tempo.
 
-Futuramente irei propor uma função que tem essas propriedades descritas.
+Uma função candidata para fazer essa transição suave é:
+
+$$sen(\theta) = rkL_1 + \frac{1}{rk}L_2 $$
+
+Tal que $L_1(r)$ é a função logística centrada em $1/k$:
+
+$$ L_1(r) = \left(1 - \frac{1}{1+exp\left(-\zeta (r-1/k)\right)}\right)^a$$
+
+$$ L_2(r) = \left(\frac{1}{1+exp\left(-\zeta (r-1/k)\right)}\right)^a$$
+
+Utilizando simulações em python, conseguimos otimizar o tempo total com relação aos parâmetros $\zeta$ e $a$.
+
+Com isso, para:
+
+$$\boxed{\zeta=80}$$
+$$\boxed{a=1.3}$$
+$$\boxed{T = 1.185}$$
+
+![alt text](image-2.png)
