@@ -3,20 +3,25 @@ import scipy.integrate as spi
 import matplotlib.pyplot as plt
 import math
 
-k = 4.6033
+k = 4.6033*0.99
+gamma = 4.4303
 
 x0 = np.zeros(2)
 x0[0] = 0
 x0[1] = math.pi
+
+
+
 def get_theta(r):
     if r < 1/k:
-        theta = math.asin(r * k)
+        theta = math.asin(r * gamma)
     else:
         theta = math.asin(1/(r * k))
     return theta
+
 def first_derivative(x, t0, k):
     theta = get_theta(x[0])
-    if x[0] < 0.0001:
+    if x[0] < 0.00001:
         xdot = np.array([
             1,
             -k 
@@ -30,7 +35,7 @@ def first_derivative(x, t0, k):
 
 
 
-t = np.linspace(0., 2., 3000)
+t = np.linspace(0., 2., 3000000)
 x = spi.odeint(first_derivative, x0, t, args=(k,))
 theta = np.array([get_theta(x) for x in x[:,0]])
 

@@ -202,7 +202,7 @@ $$\boxed{t_0=0.9761}$$
 
 ___
 
-Podemos refazer as análises para $r^* < r < 1$ e o ângulo entre L e D $\alpha$, com $\alpha \le \pi$:
+Podemos refazer as análises para $r^* < r < 1$ e o ângulo ao final do período entre L e D $\alpha=\alpha_o$, com $\alpha \le \pi$:
 
 $$\boxed{\theta = arcsen  \frac{1}{rk}} $$
 
@@ -210,14 +210,14 @@ $$\boxed{t_0 = \sqrt{1-\frac{1}{k^2}}}$$
 
 $$\boxed{ r = \sqrt{t^2 + \frac{1}{k^2}}}$$
 
-$$\boxed{ \sqrt{k^2-1} = tan\left(\sqrt{k^2-1}+\alpha\right)}$$
+$$\boxed{ \sqrt{k^2-1} = tan\left(\sqrt{k^2-1}-\alpha_o\right)}$$
 ___
 
 Temos que calcular agora a trajetória ótima de L indo do centro até $r^*$, que tem como duração $\tau$ e que encerra com ângulo entre L e D em $\alpha$
 
 Para $0 < r < r^*$:
 
-$$\boxed{\int_{0}^{\tau}\left(k-\frac{sen(\theta)}{r}\right)dt = \pi-\alpha}$$
+$$\boxed{\int_{0}^{\tau}\left(k-\frac{sen(\theta)}{r}\right)dt = \pi-\alpha_o}$$
 
 $$\boxed{\int_{0}^{\tau}cos(\theta)dt = \frac{1}{k}}$$
 
@@ -229,106 +229,104 @@ $$\frac{sen(\theta)}{r} = k-\beta$$
 
 Assim:
 
-$$\beta\tau = \pi-\alpha$$
+$$\int_{0}^{\tau}\left(k-\frac{sen(\theta)}{r}\right)dt = \pi-\alpha_o$$
 
-$$\boxed{\beta = \frac{\pi-\alpha}{\tau}}$$
+$$\int_{0}^{\tau}\left(k-(k-\beta)\right)dt = \pi-\alpha_o$$
+
+$$\int_{0}^{\tau}\beta dt = \pi-\alpha_o$$
+
+$$\beta\tau = \pi-\alpha_o$$
+
+$$\boxed{\beta = \frac{\pi-\alpha_o}{\tau}}$$
 
 $$sen(\theta) = r (k-\beta)$$
 
-$$sen(\theta) = r (k-\frac{\pi-\alpha}{\tau})$$
+$$sen(\theta) = r (k-\frac{\pi-\alpha_o}{\tau})$$
 
 $$\boxed{sen(\theta) = r\gamma}$$
+Ou:
+$$\boxed{\theta = arcsen(r\gamma)}$$
 
 Com:
 
-$$\boxed{\gamma = k-\frac{\pi-\alpha}{\tau}}$$
+$$\boxed{\gamma = k-\frac{\pi-\alpha_o}{\tau}}$$
 
-$$\dot{r}=cos(\theta)$$
+$$\frac{d}{dt}sen(\theta) = \frac{d}{dt}r\gamma$$
 
-$$\frac{\dot{r}}{cos(\theta)}=1$$
+$$cos(\theta)\dot{\theta} = \dot{r}\gamma$$
+$$\dot{\theta} = \gamma$$
+$$\theta = \gamma t + \theta_0$$
+Quando t=0:
+$$\theta(t=0) = 0 = \theta_0$$
+$$\boxed{\theta_0 = 0}$$
 
-$$\int\frac{\dot{r}}{cos(\theta)}dt=t+K_2'$$
-
-$$\int\frac{1}{\sqrt{1-r^2\gamma^2}}dr=t+K_2'$$
-
-$$arcsen(r\gamma)=t+K_2$$
-
-Para $t=0$, $r=0$:
-
-$$arcsen(0)= K_2 $$
-
-$$K_2 = 0$$
-
-Para $t=\tau$, $r=1/k$:
-
-$$\tau =arcsen\left(\frac{\gamma}{k}\right)$$
-
-$$k-\frac{\pi-\alpha}{\tau} = ksen(\tau)$$
-
-$$\tau k-\pi+\alpha = \tau ksen(\tau)$$
-
-$$\tau k - \tau ksen(\tau) = \pi-\alpha$$
-
-$$\boxed{\tau  (1 - sen(\tau)) = \frac{\pi-\alpha}{k}}$$
-
-
-
-O tempo total $T$ nessa condição é:
-
-$$\boxed{T=t_0+\tau}$$
 
 Além disso:
 
-$$\sqrt{k^2-1} = tan\left(\sqrt{k^2-1}+\alpha\right)$$
-Caso $k=0.99*k_{lim}$, e $0<\alpha<\pi$
+$$\sqrt{k^2-1} = tan\left(\sqrt{k^2-1}-\alpha_o\right)$$
 
-$$\alpha=arctan\left(\sqrt{k^2-1}\right)-\sqrt{k^2-1}$$
+Caso $k=0.99*k_{lim}$, e $0<\alpha_o<\pi$
+$$arctan(\sqrt{k^2-1})= \sqrt{k^2-1}-\alpha_o$$
+$$\alpha_o=arctan\left(\sqrt{k^2-1}\right)-\sqrt{k^2-1}$$
+$$\boxed{\alpha_o = 3.0966 = 177.424^o}$$
 
-$$\boxed{\alpha = 3.0317 = 173.704^o}$$
+Também:
+$$\dot{r} = cos(\theta) = cos(\gamma t)$$
+$$r = \frac{1}{\gamma} sin(\gamma t)$$
 
-$$\tau  (1 - sen(\tau)) = \frac{\pi-\alpha}{k}$$
+Para $t=\tau$:
+$$\frac{1}{k} = \frac{1}{\gamma} sin(\gamma \tau)$$
 
-$$\boxed{\tau=1.4542}$$
+$$\frac{1}{k} = \frac{\tau}{k\tau-\pi+\alpha_o} sin(k\tau-\pi+\alpha_o)$$
+$$\boxed{\tau = 0.298}$$
 
-$$\beta = \frac{\pi-\alpha}{\tau}$$
+O tempo total $T$ nessa condição é:
 
-$$\boxed{\beta = 0.0309 \approx 1.77^o/u.d.t.}$$
+$$T=t_0+\tau$$
+$$\boxed{T=1.2741}$$
 
-obs: $u.d.t$ = unidade de tempo
+$$\boxed{\beta = 0.1510}$$
+$$\boxed{\gamma = 4.4063}$$
 
-$$\gamma = k-\frac{\pi-\alpha}{\tau}$$
+A minha primeira sugestão de trajetória é seguir uma estratégias com 2 estágios. 
 
-$$\boxed{\gamma=4.5263}$$
-
-Logo, o tempo total neste caso é:
-
-$$\boxed{T=2.4303}$$
-
-Caso $k=k_{lim}$
-
-$$\alpha = 3.1415 = 180^o$$
-
-$$\beta = 0$$
-
-$$\tau=1.574$$
-
-$$T=2.5501$$
-
-Assim, caso a solução particular adotada descreva a função ótima (que possivelmente não é verdade), a melhor estratégia caso $k=0.99* k_{lim}$ é que o trajeto até $r=1/k$ de L siga com velocidade angular relativa entre L e D de $-1.77^o/u.d.t$ e o restante da velocidade seja dedicada radialmente, posteriormente, quando $r\ge1/k$, a velocidade tangencial de L seja $v_t = \frac{1}{rk}$.
+1) Manter o ângulo $\theta = arcsen(r\gamma)$ até alcançar $r=1/k$
+2) Posteriormente, manter o ângulo $\theta = arcsen(1/rk)$
 
 ____
-Intuitivamente parece que é "barato" para L manter a distância angular até D. Então talvez uma forma particular que poderia se favorecer por isso seria:
 
-$$\frac{sen(\theta)}{r} = k-\beta e^{Ct}$$
+A simulação da estrategia via python pode ser descrita da forma:
 
-Assim:
-$$\int_{0}^{\tau}\left(k-\frac{sen(\theta)}{r}\right)dt = \pi-\alpha$$
-$$\int_{0}^{\tau}\beta e^{Ct}dt = \pi-\alpha$$
+    def get_theta(r):
+        if r < 1/k:
+            theta = math.asin(r * gamma)
+        else:
+            theta = math.asin(1/(r * k))
+        return theta
 
-$$\boxed{\frac{\beta}{C}\left(e^{C\tau}-1\right) = \pi-\alpha}$$
+    def first_derivative(x, t0, k):
+        theta = get_theta(x[0])
+        if x[0] < 0.0001:
+            xdot = np.array([
+                1,
+                -k 
+            ])
+        else:
+            xdot = np.array([
+                math.cos(theta),
+                -k + math.sin(theta) / x[0]
+            ])
+        return xdot
 
-$$sen(\theta) = r(k-\beta e^{Ct})$$
+Desta forma obtemos no caso $k=k_{lim}$:
 
-$$\dot{r}=cos(\theta)$$
-$$\dot{r}=\sqrt{1-r^2(k-\beta e^{Ct})^2}$$
-$$\dot{r}^2=1-r^2(k-\beta e^{Ct})^2$$
+![alt text](image.png)
+
+Já no caso $k=k_{lim}*0.99$:
+
+![alt text](image-1.png)
+
+Os gráficos de trajetória tornam evidente a ineficiência da estratégia, especialmente na transição em torno de $r=1/k$.
+Acredito que uma função contínua em que $\theta$ tende para a funcão descrita no caso $k=k_{lim}$ deve ser a curva de menor tempo.
+
+Futuramente irei propor uma função que tem essas propriedades descritas.
