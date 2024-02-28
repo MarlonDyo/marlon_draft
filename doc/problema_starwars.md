@@ -244,7 +244,9 @@ $$sen(\theta) = r (k-\beta)$$
 $$sen(\theta) = r (k-\frac{\pi-\alpha_o}{\tau})$$
 
 $$\boxed{sen(\theta) = r\gamma}$$
+
 Ou:
+
 $$\boxed{\theta = arcsen(r\gamma)}$$
 
 Com:
@@ -254,38 +256,50 @@ $$\boxed{\gamma = k-\frac{\pi-\alpha_o}{\tau}}$$
 $$\frac{d}{dt}sen(\theta) = \frac{d}{dt}r\gamma$$
 
 $$cos(\theta)\dot{\theta} = \dot{r}\gamma$$
-$$\dot{\theta} = \gamma$$
-$$\theta = \gamma t + \theta_0$$
-Quando t=0:
-$$\theta(t=0) = 0 = \theta_0$$
-$$\boxed{\theta_0 = 0}$$
 
+$$\dot{\theta} = \gamma$$
+
+$$\theta = \gamma t + \theta_0$$
+
+Quando t=0:
+
+$$\theta(t=0) = 0 = \theta_0$$
+
+$$\boxed{\theta_0 = 0}$$
 
 Além disso:
 
 $$\sqrt{k^2-1} = tan\left(\sqrt{k^2-1}-\alpha_o\right)$$
 
 Caso $k=0.99*k_{lim}$, e $0<\alpha_o<\pi$
+
 $$arctan(\sqrt{k^2-1})= \sqrt{k^2-1}-\alpha_o$$
+
 $$\alpha_o=arctan\left(\sqrt{k^2-1}\right)-\sqrt{k^2-1}$$
+
 $$\boxed{\alpha_o = 3.0966 = 177.424^o}$$
 
 Também:
 $$\dot{r} = cos(\theta) = cos(\gamma t)$$
+
 $$r = \frac{1}{\gamma} sin(\gamma t)$$
 
 Para $t=\tau$:
+
 $$\frac{1}{k} = \frac{1}{\gamma} sin(\gamma \tau)$$
 
 $$\frac{1}{k} = \frac{\tau}{k\tau-\pi+\alpha_o} sin(k\tau-\pi+\alpha_o)$$
+
 $$\boxed{\tau = 0.298}$$
 
 O tempo total $T$ nessa condição é:
 
 $$T=t_0+\tau$$
+
 $$\boxed{T=1.2741}$$
 
 $$\boxed{\beta = 0.1510}$$
+
 $$\boxed{\gamma = 4.4063}$$
 
 A minha primeira sugestão de trajetória é seguir uma estratégias com 2 estágios. 
